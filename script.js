@@ -33,7 +33,6 @@ function playGame(playerCh, compCh) {
     return `You WON ${playerCh} beats ${compCh}`;
   } else {
     return `You lose! The Computer chooses ${compCh} that beats ${playerCh}`;
-    console.log(playerCh, compCh);
   }
 }
 
