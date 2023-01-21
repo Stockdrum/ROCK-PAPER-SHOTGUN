@@ -11,3 +11,13 @@ function getComputerChoice() {
 }
 
 getComputerChoice();
+
+function playGame(playerCh, compCh) {
+  if (playerCh === options) {
+    true;
+  } else {
+    compCh === false;
+  }
+}
+
+playGame();
