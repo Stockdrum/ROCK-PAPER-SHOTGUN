@@ -19,9 +19,9 @@ function checkWinner(playerCh, compCh) {
     (playerCh == "scissors" && compCh == "paper") ||
     (playerCh == "paper" && compCh == "rock")
   ) {
-    return "PLAYER WINS!!!";
+    return "Player";
   } else {
-    return "Computer Wins!!";
+    return "Computer";
   }
 }
 
@@ -32,15 +32,11 @@ function playGame(playerCh, compCh) {
   } else if (result == "Player") {
     return `You WON ${playerCh} beats ${compCh}`;
   } else {
-    `You LOSE ${compCh} beats ${playerCh}`;
+    return `You lose! The Computer chooses ${compCh} that beats ${playerCh}`;
     console.log(playerCh, compCh);
   }
 }
 
 const playerChoice = "rock";
 const computerChoice = getComputerChoice();
-
-playGame();
-getComputerChoice();
-checkWinner();
 console.log(playGame(playerChoice, computerChoice));
