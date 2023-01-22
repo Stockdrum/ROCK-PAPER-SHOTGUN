@@ -7,7 +7,6 @@ const options = ["rock", "paper", "scissors"];
 
 function getComputerChoice() {
   const choice = options[Math.floor(Math.random() * options.length)];
-  console.log(choice);
   return choice;
 }
 
@@ -39,3 +38,30 @@ function playGame(playerCh, compCh) {
 const playerChoice = "rock";
 const computerChoice = getComputerChoice();
 console.log(playGame(playerChoice, computerChoice));
+
+function getPlayerCh() {
+  let validation = false;
+  while (validation == false) {
+    const choice = prompt("Rock Paper Scissors?");
+    if (choice == null) {
+      continue;
+    }
+    const choiceLowerCase = choice.toLowerCase();
+    if (options.includes(choiceLowerCase)) {
+      validation = true;
+      return choiceLowerCase;
+    }
+  }
+}
+
+function game() {
+  console.log("Welcome!");
+  for (let i = 0; i < 5; i++) {
+    const playerChoice = getPlayerCh();
+    const compChoice = getComputerChoice();
+    console.log(playGame(playerChoice, compChoice));
+  }
+  console.log("GAME OVER!!");
+}
+
+game();
