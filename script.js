@@ -55,13 +55,28 @@ function getPlayerCh() {
 }
 
 function game() {
+  let scorePl = 0;
+  let scoreCp = 0;
   console.log("Welcome!");
   for (let i = 0; i < 5; i++) {
     const playerChoice = getPlayerCh();
     const compChoice = getComputerChoice();
     console.log(playGame(playerChoice, compChoice));
+    console.log("-----------------------------");
+    if (checkWinner(playerChoice, compChoice) === "Player") {
+      scorePl++;
+    } else if (checkWinner(playerChoice, compChoice) == "Computer") {
+      scoreCp++;
+    }
   }
   console.log("GAME OVER!!");
+  if (scorePl > scoreCp) {
+    console.log("PLAYER WAS THE WINNAH");
+  } else if (scorePl < scoreCp) {
+    console.log("Computer wins!");
+  } else {
+    console.log("We have a tie!");
+  }
 }
 
 game();
